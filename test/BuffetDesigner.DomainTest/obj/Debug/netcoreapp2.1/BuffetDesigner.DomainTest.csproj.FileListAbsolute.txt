@@ -1,0 +1,17 @@
+C:\Fredy\TECFULL\Projetos\Adilson - Bonanza\Solution\test\BuffetDesigner.DomainTest\bin\Debug\netcoreapp2.1\xunit.runner.visualstudio.dotnetcore.testadapter.dll
+C:\Fredy\TECFULL\Projetos\Adilson - Bonanza\Solution\test\BuffetDesigner.DomainTest\bin\Debug\netcoreapp2.1\xunit.runner.reporters.netcoreapp10.dll
+C:\Fredy\TECFULL\Projetos\Adilson - Bonanza\Solution\test\BuffetDesigner.DomainTest\bin\Debug\netcoreapp2.1\xunit.runner.utility.netcoreapp10.dll
+C:\Fredy\TECFULL\Projetos\Adilson - Bonanza\Solution\test\BuffetDesigner.DomainTest\bin\Debug\netcoreapp2.1\BuffetDesigner.DomainTest.deps.json
+C:\Fredy\TECFULL\Projetos\Adilson - Bonanza\Solution\test\BuffetDesigner.DomainTest\bin\Debug\netcoreapp2.1\BuffetDesigner.DomainTest.runtimeconfig.json
+C:\Fredy\TECFULL\Projetos\Adilson - Bonanza\Solution\test\BuffetDesigner.DomainTest\bin\Debug\netcoreapp2.1\BuffetDesigner.DomainTest.runtimeconfig.dev.json
+C:\Fredy\TECFULL\Projetos\Adilson - Bonanza\Solution\test\BuffetDesigner.DomainTest\bin\Debug\netcoreapp2.1\BuffetDesigner.DomainTest.dll
+C:\Fredy\TECFULL\Projetos\Adilson - Bonanza\Solution\test\BuffetDesigner.DomainTest\bin\Debug\netcoreapp2.1\BuffetDesigner.DomainTest.pdb
+C:\Fredy\TECFULL\Projetos\Adilson - Bonanza\Solution\test\BuffetDesigner.DomainTest\obj\Debug\netcoreapp2.1\BuffetDesigner.DomainTest.csprojAssemblyReference.cache
+C:\Fredy\TECFULL\Projetos\Adilson - Bonanza\Solution\test\BuffetDesigner.DomainTest\obj\Debug\netcoreapp2.1\BuffetDesigner.DomainTest.csproj.CoreCompileInputs.cache
+C:\Fredy\TECFULL\Projetos\Adilson - Bonanza\Solution\test\BuffetDesigner.DomainTest\obj\Debug\netcoreapp2.1\BuffetDesigner.DomainTest.AssemblyInfoInputs.cache
+C:\Fredy\TECFULL\Projetos\Adilson - Bonanza\Solution\test\BuffetDesigner.DomainTest\obj\Debug\netcoreapp2.1\BuffetDesigner.DomainTest.AssemblyInfo.cs
+C:\Fredy\TECFULL\Projetos\Adilson - Bonanza\Solution\test\BuffetDesigner.DomainTest\obj\Debug\netcoreapp2.1\BuffetDesigner.DomainTest.dll
+C:\Fredy\TECFULL\Projetos\Adilson - Bonanza\Solution\test\BuffetDesigner.DomainTest\obj\Debug\netcoreapp2.1\BuffetDesigner.DomainTest.pdb
+C:\Fredy\TECFULL\Projetos\Adilson - Bonanza\Solution\test\BuffetDesigner.DomainTest\bin\Debug\netcoreapp2.1\BuffetDesigner.Domain.dll
+C:\Fredy\TECFULL\Projetos\Adilson - Bonanza\Solution\test\BuffetDesigner.DomainTest\bin\Debug\netcoreapp2.1\BuffetDesigner.Domain.pdb
+C:\Fredy\TECFULL\Projetos\Adilson - Bonanza\Solution\test\BuffetDesigner.DomainTest\obj\Debug\netcoreapp2.1\BuffetDesigner.DomainTest.csproj.CopyComplete

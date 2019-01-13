@@ -1,0 +1,9 @@
+C:\Fredy\TECFULL\Projetos\Adilson - Bonanza\Solution\src\BuffetDesigner.Domain\bin\Debug\netstandard2.0\BuffetDesigner.Domain.deps.json
+C:\Fredy\TECFULL\Projetos\Adilson - Bonanza\Solution\src\BuffetDesigner.Domain\bin\Debug\netstandard2.0\BuffetDesigner.Domain.dll
+C:\Fredy\TECFULL\Projetos\Adilson - Bonanza\Solution\src\BuffetDesigner.Domain\bin\Debug\netstandard2.0\BuffetDesigner.Domain.pdb
+C:\Fredy\TECFULL\Projetos\Adilson - Bonanza\Solution\src\BuffetDesigner.Domain\obj\Debug\netstandard2.0\BuffetDesigner.Domain.csprojAssemblyReference.cache
+C:\Fredy\TECFULL\Projetos\Adilson - Bonanza\Solution\src\BuffetDesigner.Domain\obj\Debug\netstandard2.0\BuffetDesigner.Domain.csproj.CoreCompileInputs.cache
+C:\Fredy\TECFULL\Projetos\Adilson - Bonanza\Solution\src\BuffetDesigner.Domain\obj\Debug\netstandard2.0\BuffetDesigner.Domain.AssemblyInfoInputs.cache
+C:\Fredy\TECFULL\Projetos\Adilson - Bonanza\Solution\src\BuffetDesigner.Domain\obj\Debug\netstandard2.0\BuffetDesigner.Domain.AssemblyInfo.cs
+C:\Fredy\TECFULL\Projetos\Adilson - Bonanza\Solution\src\BuffetDesigner.Domain\obj\Debug\netstandard2.0\BuffetDesigner.Domain.dll
+C:\Fredy\TECFULL\Projetos\Adilson - Bonanza\Solution\src\BuffetDesigner.Domain\obj\Debug\netstandard2.0\BuffetDesigner.Domain.pdb
