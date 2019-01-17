@@ -71,7 +71,7 @@ namespace BuffetDesigner.DomainTest.Products
         {
             Assert.Throws<DomainException>(() =>
                 ProductBuilder.New().WithNomeApresentacao(nomeApresentacaoInvalido).Build())
-                .WithMessage(Resource.ProductApresentationInvalid);                
+                .WithMessage(Resource.InvalidProductApresentation);                
         }
 
         [Theory]
@@ -81,7 +81,7 @@ namespace BuffetDesigner.DomainTest.Products
         {
             Assert.Throws<DomainException>(() =>
                 ProductBuilder.New().WithCodBonanza(codBonanzaInvalido).Build())
-                .WithMessage(Resource.ProductCodeInvalid);
+                .WithMessage(Resource.InvalidProductCode);
         }
 
         [Theory]
@@ -91,7 +91,7 @@ namespace BuffetDesigner.DomainTest.Products
         {
             Assert.Throws<DomainException>(() =>
                 ProductBuilder.New().WithFotoProjeto(fotoProjetoInvalida).Build())
-                .WithMessage(Resource.ProductProjectPhotoInvalid);
+                .WithMessage(Resource.InvalidProductProjectPhoto);
         }
 
         [Theory]
@@ -116,7 +116,7 @@ namespace BuffetDesigner.DomainTest.Products
 
             Assert.Throws<DomainException>(() =>
                 product.ChangeNomeApresentacao(invalidValue)
-            ).WithMessage(Resource.ProductApresentationInvalid);
+            ).WithMessage(Resource.InvalidProductApresentation);
         }
 
         
@@ -125,12 +125,12 @@ namespace BuffetDesigner.DomainTest.Products
         [InlineData("1")]
         public void ShouldChangeCodBonanza(string codBonanza)
         {
-            var exceptedCodBonanza = codBonanza;
+            var expectedCodBonanza = codBonanza;
             var product = ProductBuilder.New().Build();
 
-            product.ChangeCodBonanza(exceptedCodBonanza);
+            product.ChangeCodBonanza(expectedCodBonanza);
 
-            Assert.Equal(exceptedCodBonanza, product.CodBonanza);
+            Assert.Equal(expectedCodBonanza, product.CodBonanza);
         }
         
         [Theory]
@@ -142,7 +142,7 @@ namespace BuffetDesigner.DomainTest.Products
 
             Assert.Throws<DomainException>(() =>
                 product.ChangeCodBonanza(invalidValue)
-            ).WithMessage(Resource.ProductCodeInvalid);
+            ).WithMessage(Resource.InvalidProductCode);
         }
 
         [Theory]
@@ -166,7 +166,7 @@ namespace BuffetDesigner.DomainTest.Products
 
             Assert.Throws<DomainException>(() => 
                 product.ChangeFotoProjeto(invalidValue)                
-            ).WithMessage(Resource.ProductProjectPhotoInvalid);
+            ).WithMessage(Resource.InvalidProductProjectPhoto);
 
 
         }
@@ -176,32 +176,32 @@ namespace BuffetDesigner.DomainTest.Products
         [InlineData(Status.Excluido)]
         public void ShouldChangeStatus(Status status)
         {
-            var exceptedStatus = status;
+            var expectedStatus = status;
             var product = ProductBuilder.New().Build();
 
-            product.ChangeStatus(exceptedStatus);
+            product.ChangeStatus(expectedStatus);
 
-            Assert.Equal(exceptedStatus, product.Status);
+            Assert.Equal(expectedStatus, product.Status);
         }
         
         [Fact]
         public void ShouldChangeDetais()
         {
-            var exceptedDescricao = _descricao;
-            var exceptedFotoIlustrativa = _fotoIlustrativa;
-            var exceptedFotoDetalhe1 = _fotoDetalhe1;
-            var exceptedfotoDetalhe2 = _fotoDetalhe2;
-            var exceptedfotoDetalhe3 = _fotoDetalhe3;
+            var expectedDescricao = _descricao;
+            var expectedFotoIlustrativa = _fotoIlustrativa;
+            var expectedFotoDetalhe1 = _fotoDetalhe1;
+            var expectedfotoDetalhe2 = _fotoDetalhe2;
+            var expectedfotoDetalhe3 = _fotoDetalhe3;
 
             var product = ProductBuilder.New().Build();
 
-            product.ChangeDetails(exceptedDescricao, exceptedFotoIlustrativa, exceptedFotoDetalhe1, exceptedfotoDetalhe2, exceptedfotoDetalhe3);
+            product.ChangeDetails(expectedDescricao, expectedFotoIlustrativa, expectedFotoDetalhe1, expectedfotoDetalhe2, expectedfotoDetalhe3);
 
-            Assert.Equal(exceptedDescricao, product.Descricao);
-            Assert.Equal(exceptedFotoIlustrativa, product.FotoIlustrativa);
-            Assert.Equal(exceptedFotoDetalhe1, product.FotoDetalhe1);
-            Assert.Equal(exceptedfotoDetalhe2, product.FotoDetalhe2);
-            Assert.Equal(exceptedfotoDetalhe3, product.FotoDetalhe3);
+            Assert.Equal(expectedDescricao, product.Descricao);
+            Assert.Equal(expectedFotoIlustrativa, product.FotoIlustrativa);
+            Assert.Equal(expectedFotoDetalhe1, product.FotoDetalhe1);
+            Assert.Equal(expectedfotoDetalhe2, product.FotoDetalhe2);
+            Assert.Equal(expectedfotoDetalhe3, product.FotoDetalhe3);
 
         }
 

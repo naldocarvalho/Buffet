@@ -8,10 +8,18 @@ namespace BuffetDesigner.DomainTest._Util
     {
         public static void WithMessage(this DomainException exception, string message)
         {
+
             if (exception.ErrorMessages.Contains(message))
+            {
                 Assert.True(true);
+            }
             else
-                Assert.True(false, $"Estava esperando a mensagem: '{message}' e recebemos '{exception.ErrorMessages.ToString()}");
+            {
+                string _msgsError = String.Join(",", exception.ErrorMessages.ToArray());
+                Assert.True(false, $"Estava esperando a mensagem: '{message}' e recebemos '{_msgsError}");
+            }
+                
+                
         }
         
     }

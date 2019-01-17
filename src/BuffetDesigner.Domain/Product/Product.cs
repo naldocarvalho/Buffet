@@ -18,9 +18,9 @@ namespace BuffetDesigner.Domain.Product
         public Product(string nomeApresentacao, string descricao, string codBonanza, Status status, string fotoProjeto, string fotoIlustrativa, string fotoDetalhe1, string fotoDetalhe2, string fotoDetalhe3)
         {
             RuleValidator.New()
-                .When(string.IsNullOrEmpty(nomeApresentacao), Resource.ProductApresentationInvalid)
-                .When(string.IsNullOrEmpty(codBonanza), Resource.ProductCodeInvalid)
-                .When(string.IsNullOrEmpty(fotoProjeto), Resource.ProductProjectPhotoInvalid)
+                .When(string.IsNullOrEmpty(nomeApresentacao), Resource.InvalidProductApresentation)
+                .When(string.IsNullOrEmpty(codBonanza), Resource.InvalidProductCode)
+                .When(string.IsNullOrEmpty(fotoProjeto), Resource.InvalidProductProjectPhoto)
                 .ThrowExceptionIfExists();
 
             NomeApresentacao = nomeApresentacao;
@@ -37,7 +37,7 @@ namespace BuffetDesigner.Domain.Product
         public void ChangeNomeApresentacao(string nomeApresentacao)
         {
             RuleValidator.New()
-                .When(string.IsNullOrEmpty(nomeApresentacao), Resource.ProductApresentationInvalid)
+                .When(string.IsNullOrEmpty(nomeApresentacao), Resource.InvalidProductApresentation)
                 .ThrowExceptionIfExists();
             NomeApresentacao = nomeApresentacao;
         }
@@ -45,7 +45,7 @@ namespace BuffetDesigner.Domain.Product
         public void ChangeCodBonanza(string codBonanza)
         {
             RuleValidator.New()
-                .When(string.IsNullOrEmpty(codBonanza), Resource.ProductCodeInvalid)
+                .When(string.IsNullOrEmpty(codBonanza), Resource.InvalidProductCode)
                 .ThrowExceptionIfExists();
             CodBonanza = codBonanza;
         }
@@ -53,7 +53,7 @@ namespace BuffetDesigner.Domain.Product
         public void ChangeFotoProjeto(string fotoProjeto)
         {
             RuleValidator.New()
-                .When(string.IsNullOrEmpty(fotoProjeto), Resource.ProductProjectPhotoInvalid)
+                .When(string.IsNullOrEmpty(fotoProjeto), Resource.InvalidProductProjectPhoto)
                 .ThrowExceptionIfExists();
 
             FotoProjeto = fotoProjeto;
