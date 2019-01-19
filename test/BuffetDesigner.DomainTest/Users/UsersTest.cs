@@ -6,6 +6,7 @@ using BuffetDesigner.DomainTest._Builders;
 using ExpectedObjects;
 using Xunit;
 using BuffetDesigner.DomainTest._Util;
+using BuffetDesigner.Domain.User;
 
 namespace BuffetDesigner.DomainTest.Users
 {
@@ -51,7 +52,8 @@ namespace BuffetDesigner.DomainTest.Users
                 Status = _status
             };
 
-            var user = new User(expectedUser.Nome, expectedUser.Email, expectedUser.Empresa, expectedUser.Telefone, expectedUser.Senha, expectedUser.GeoLocalizacao, expectedUser.TipoUsuario, expectedUser.Status);
+            var user = new User(expectedUser.Nome, expectedUser.Email, expectedUser.Empresa, expectedUser.Telefone, expectedUser.Senha, 
+                                expectedUser.GeoLocalizacao, expectedUser.TipoUsuario, expectedUser.Status);
 
             expectedUser.ToExpectedObject().Matches(user);
         }
@@ -95,77 +97,5 @@ namespace BuffetDesigner.DomainTest.Users
                 UserBuilder.New().WithTelefone(invalidTelefone).Build())
                 .WithMessage(Resource.InvalidUserTelefone);    
         }
-    }
-
-
-    public class User
-    {
-        public string Nome { get; private set; }
-        public string Email { get; private set; }
-        public string Empresa { get; private set; }
-        public string Telefone { get; private set; }
-        public string Senha { get; private set; }
-        public string GeoLocalizacao { get; private set; }
-        public TipoUsuario TipoUsuario { get; private set; }
-        public Status Status { get; private set; }
-       
-        public User(string nome, string email, string empresa, string telefone, string senha, string geoLocalizacao, TipoUsuario tipoUsuario, Status status)
-        {            
-
-            RuleValidator.New()
-                .When(string.IsNullOrEmpty(nome), Resource.InvalidUserNome)
-                .When(string.IsNullOrEmpty(email), Resource.InvalidUserEmail)
-                .When(string.IsNullOrEmpty(empresa), Resource.InvalidUserEmpresa)
-                .When(string.IsNullOrEmpty(telefone), Resource.InvalidUserTelefone)
-                .ThrowExceptionIfExists();
-
-            this.Nome = nome;
-            this.Email = email;
-            this.Empresa = empresa;
-            this.Telefone = telefone;
-            this.Senha = senha;
-            this.GeoLocalizacao = geoLocalizacao;
-            this.TipoUsuario = tipoUsuario;
-            this.Status = status;
-
-        }
-
-        public void ChangeNome(string nome)
-        {
-            RuleValidator.New()
-                .When(string.IsNullOrEmpty(nome), Resource.InvalidUserNome)
-                .ThrowExceptionIfExists();
-
-            Nome = nome;
-        }
-        public void ChangeEmail(string email)
-        {
-            RuleValidator.New()
-                .When(string.IsNullOrEmpty(email), Resource.InvalidUserEmail)
-                .ThrowExceptionIfExists();
-
-            Email = email;
-        }
-        public void ChangeEmpresa(string empresa)
-        {
-            RuleValidator.New()
-                .When(string.IsNullOrEmpty(empresa), Resource.InvalidUserEmpresa)
-                .ThrowExceptionIfExists();
-
-            Empresa = empresa;
-        }
-        public void ChangeTelefone(string telefone)
-        {
-            RuleValidator.New()
-                .When(string.IsNullOrEmpty(telefone), Resource.InvalidUserTelefone)
-                .ThrowExceptionIfExists();
-
-            Telefone = telefone;
-
-        }
-
-
-     
-
     }
 }

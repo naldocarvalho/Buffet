@@ -22,7 +22,7 @@ namespace BuffetDesigner.Domain._Base
         public static string InvalidUserNome = "O nome do usuário é inválido";
         public static string InvalidUserEmpresa = "O nome da empresa é inválido";
         public static string InvalidUserEmail = "O email do usuário é inválido";
-
         public static string InvalidUserTelefone = "O telefone do usuário é inválido";
+        public static string InvalidUserSenha = "A senha do usuário é inválida";
     }
 }

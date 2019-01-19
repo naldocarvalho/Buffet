@@ -1,4 +1,5 @@
 using BuffetDesigner.Domain.Enums;
+using BuffetDesigner.Domain.User;
 using BuffetDesigner.DomainTest.Users;
 
 namespace BuffetDesigner.DomainTest._Builders
@@ -12,7 +13,7 @@ namespace BuffetDesigner.DomainTest._Builders
         private string _senha = "123456";
         private string _geoLocalizacao = "Belo Horizonte";
         private TipoUsuario _tipoUsuario = TipoUsuario.Administrador;
-        private Status _status = Status.Ativo;
+        private Status _status = Status.Ativo;        
         
         public static UserBuilder New()
         {
