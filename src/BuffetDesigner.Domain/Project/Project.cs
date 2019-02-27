@@ -4,7 +4,7 @@ using BuffetDesigner.Domain.Enums;
 
 namespace BuffetDesigner.Domain.Project
 {
-    public class Project
+    public class Project : BaseEntity
     {
         public string Descricao { get; private set; }
         public double Largura { get; private set; }
@@ -16,8 +16,8 @@ namespace BuffetDesigner.Domain.Project
         {
             RuleValidator.New()
                 .When(string.IsNullOrEmpty(descricao), Resource.InvalidProjectDescription)
-                .When(largura <= 0, Resource.InvalidProjectLength)
-                .When(comprimento <= 0, Resource.InvalidProjectWidth)
+                .When(largura <= 0, Resource.InvalidProjectWidth)
+                .When(comprimento <= 0, Resource.InvalidProjectLength)
                 .ThrowExceptionIfExists();
 
             Descricao = descricao;

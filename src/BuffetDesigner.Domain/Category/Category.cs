@@ -8,14 +8,12 @@ namespace BuffetDesigner.Domain.Category
 {
     public class Category: BaseEntity
     {
+        public string Descricao { get; private set; }
+        public Status Status { get; private set; }
+
         private Category() { }
         public Category(string descricao, Status status)
         {
-
-            // if (string.IsNullOrEmpty(descricao))
-            // {
-            //     throw new ArgumentException(Resource.InvalidCategory);               
-            // }
 
             RuleValidator.New()
                 .When(string.IsNullOrEmpty(descricao), Resource.InvalidCategoryDescription)                
@@ -25,8 +23,16 @@ namespace BuffetDesigner.Domain.Category
             Descricao = descricao;
             Status = status;
         }
-        public string Descricao { get; private set; }
-        public Status Status { get; private set; }
 
+        public void ChangeDescricao(string descricao)
+        {
+            Descricao = descricao;
+        }
+
+        public void ChangeStatus(Status status)
+        {
+            Status = status;
+        }
+        
     }
 }

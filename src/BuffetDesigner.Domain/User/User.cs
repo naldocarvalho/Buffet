@@ -3,7 +3,7 @@ using BuffetDesigner.Domain.Enums;
 
 namespace BuffetDesigner.Domain.User
 {
-    public class User
+    public class User : BaseEntity
     {
         public string Nome { get; private set; }
         public string Email { get; private set; }

@@ -65,7 +65,7 @@ namespace BuffetDesigner.DomainTest.Projects
         {
             Assert.Throws<DomainException>(() =>
                 ProjectBuilder.New().WithLargura(invalidValue).Build())
-                .WithMessage(Resource.InvalidProjectLength);
+                .WithMessage(Resource.InvalidProjectWidth);
         }
 
         [Theory]
@@ -75,7 +75,7 @@ namespace BuffetDesigner.DomainTest.Projects
         {
             Assert.Throws<DomainException>(() =>
                 ProjectBuilder.New().WithComprimento(invalidValue).Build())
-                .WithMessage(Resource.InvalidProjectWidth);
+                .WithMessage(Resource.InvalidProjectLength);
         }
 
 

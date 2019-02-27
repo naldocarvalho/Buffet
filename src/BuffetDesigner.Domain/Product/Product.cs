@@ -3,7 +3,7 @@ using BuffetDesigner.Domain.Enums;
 
 namespace BuffetDesigner.Domain.Product
 {
-    public class Product
+    public class Product : BaseEntity
     {        
         public string NomeApresentacao { get; private set; }
         public string Descricao { get; private set; }

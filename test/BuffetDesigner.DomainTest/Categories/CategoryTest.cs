@@ -22,7 +22,7 @@ namespace BuffetDesigner.DomainTest.Categories
         public CategoryTest(ITestOutputHelper output)
         {
            _output = output;
-           _output.WriteLine("Iniciando...");
+           _output.WriteLine("Iniciando teste na classe de dominio de categoria");
            _faker = new Faker();
 
            _descricao = _faker.Commerce.Categories(1)[0];
@@ -31,7 +31,7 @@ namespace BuffetDesigner.DomainTest.Categories
 
         public void Dispose()
         {
-            _output.WriteLine("Encerrando...");
+            _output.WriteLine("Finalizando ...");
         }
 
         [Fact(DisplayName = "ShouldCreateCatogory")]

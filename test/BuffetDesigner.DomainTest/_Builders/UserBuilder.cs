@@ -1,3 +1,4 @@
+using System;
 using BuffetDesigner.Domain.Enums;
 using BuffetDesigner.Domain.User;
 using BuffetDesigner.DomainTest.Users;
@@ -6,6 +7,7 @@ namespace BuffetDesigner.DomainTest._Builders
 {
     public class UserBuilder
     {
+        private int _id;
         private string _nome = "Fredy Carcalho";
         private string _email = "fredycarvalho@hotmail.com";
         private string _empresa = "TecFULL Soluções";
@@ -19,7 +21,11 @@ namespace BuffetDesigner.DomainTest._Builders
         {
             return new UserBuilder();
         }
-
+        public UserBuilder WithId(int id)
+        {
+            _id = id;
+            return this;
+        }
         public UserBuilder WithNome(string nome)
         {
             _nome = nome;
@@ -64,6 +70,13 @@ namespace BuffetDesigner.DomainTest._Builders
         public User Build()
         {
             var user = new User(_nome, _email, _empresa, _telefone, _senha, _geoLocalizacao, _tipoUsuario, _status);
+             
+             if (_id > 0)
+            {
+                var propertyInfo = user.GetType().GetProperty("Id");
+                propertyInfo.SetValue(user, Convert.ChangeType(_id, propertyInfo.PropertyType), null);
+            }
+
             return user;
         }
 
