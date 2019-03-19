@@ -36,6 +36,10 @@ namespace BuffetDesigner.Domain._Base
 
         // Tipo de Usuario
         public static string InvalidTipoUsuario = "Tipo de usuário inválido";
- 
+
+        //ItemProjeto
+        public static string InvalidCoordenada = "Coordenada inválida";
+        public static string InvalidItemProjetoProjetoId = "Id de Projeto inválido";
+        public static string InvalidItemProjetoProdutoId = "Id do produto inválido";
     }
 }

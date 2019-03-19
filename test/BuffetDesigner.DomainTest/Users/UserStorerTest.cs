@@ -1,3 +1,4 @@
+using System;
 using Bogus;
 using BuffetDesigner.Domain._Base;
 using BuffetDesigner.Domain.Enums;
@@ -114,6 +115,44 @@ namespace BuffetDesigner.DomainTest.Users
                 _userStorer.Storer(_userDto))
             .WithMessage(Resource.InvalidTipoUsuario);
         }
+
+        [Fact]
+        public void ShouldChangeEmail()
+        {
+            var newEmail = "eu@eunovamente.com.br";
+            User userNotExist = null;
+
+            _userDto.Id =123;
+            var userSaved = UserBuilder.New().WithEmail(_userDto.Email).WithEmpresa(_userDto.Empresa)
+                                .WithGeoLocalizacao(_userDto.GeoLocalizacao).WithId(_userDto.Id)
+                                .WithNome(_userDto.Nome).WithSenha(_userDto.Senha)
+                                .WithStatus(Enum.Parse<Status>(_userDto.Status))
+                                .WithTelefone(_userDto.Telefone)
+                                .WithTipoUsuario(Enum.Parse<TipoUsuario>(_userDto.TipoUsuario))
+                                .Build();            
+
+            _userRepositoryMock.Setup(u => u.GetByEmail(newEmail)).Returns(userNotExist);
+            _userRepositoryMock.Setup(u => u.GetById(_userDto.Id)).Returns(userSaved);
+
+            _userStorer.ChangeEmail(_userDto, newEmail);
+
+            Assert.Equal(userSaved.Email, newEmail);
         
+        }
+
+        [Fact]
+        public void ShouldNotChangeEmailIfEmailExist()
+        {
+            _userDto.Id = 999;
+            var emailExist = "fredycarvalho@hotmail.com";
+            var userAlreadyExist = UserBuilder.New().WithId(123).WithEmail(emailExist).Build();
+
+            _userRepositoryMock.Setup(u => u.GetByEmail(emailExist)).Returns(userAlreadyExist);
+
+            Assert.Throws<DomainException>(() =>
+                _userStorer.ChangeEmail(_userDto, emailExist))
+            .WithMessage(Resource.UserAlreadyExists);
+
+        }
     }
 }

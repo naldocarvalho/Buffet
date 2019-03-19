@@ -55,7 +55,7 @@ namespace BuffetDesigner.DomainTest.Users
             var user = new User(expectedUser.Nome, expectedUser.Email, expectedUser.Empresa, expectedUser.Telefone, expectedUser.Senha, 
                                 expectedUser.GeoLocalizacao, expectedUser.TipoUsuario, expectedUser.Status);
 
-            expectedUser.ToExpectedObject().Matches(user);
+            expectedUser.ToExpectedObject().ShouldMatch(user);
         }
 
         [Theory]
@@ -65,7 +65,7 @@ namespace BuffetDesigner.DomainTest.Users
         {
             Assert.Throws<DomainException>(() =>
                 UserBuilder.New().WithNome(invalidNome).Build())
-                .WithMessage(Resource.InvalidUserNome);    
+            .WithMessage(Resource.InvalidUserNome);    
         }
 
         [Theory]

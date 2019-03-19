@@ -45,5 +45,18 @@ namespace BuffetDesigner.Domain.User
                 userFound.ChangeTelefone(userDto.Telefone);
             }
         }
+
+        public void ChangeEmail(UserDto userDto, string newEmail)
+        {
+            var userAlreadyExist = _userRepository.GetByEmail(newEmail);
+            var userUpdate = _userRepository.GetById(userDto.Id);
+            
+            RuleValidator.New()                
+                .When(userAlreadyExist != null, Resource.UserAlreadyExists)
+                .When(userUpdate == null, Resource.UserNotFound)
+                .ThrowExceptionIfExists();
+            
+            userUpdate.ChangeEmail(newEmail); 
+        }
     }
 }

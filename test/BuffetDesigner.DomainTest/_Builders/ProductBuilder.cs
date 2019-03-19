@@ -1,7 +1,6 @@
 using System;
 using BuffetDesigner.Domain.Enums;
 using BuffetDesigner.Domain.Product;
-using static BuffetDesigner.DomainTest.Products.ProductTest;
 
 namespace BuffetDesigner.DomainTest._Builders
 {
